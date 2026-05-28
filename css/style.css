@@ -1,9 +1,16 @@
-*{
+
+ 
+ *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     background-color: none;
    
+}
+
+
+.saq{
+    display: flex;
 }
 
 .sous {
@@ -20,6 +27,13 @@
 .sep{
     font-size: 40px;
     color: none;
+}
+
+.btne{
+    padding: auto;
+    height: 30px;
+    border-radius: 10px;
+    
 }
 
 body {
@@ -39,6 +53,7 @@ header{
     background-color: #23527c;
     padding: 19px 25px;
     text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 15px 0 10px 20px;
     
 }
 
@@ -91,6 +106,7 @@ form{
 
 button{
     border-radius: 20px;
+    
 }
 button:hover{
     background-color: blueviolet;
@@ -130,39 +146,29 @@ input{
 
 }
 
+
+
+
 .banniere h1{
     font-size: 48px;
     color: #333;
 }
-.banniere button {
-    background-color: #337ab7;
-    color: #fff;
-    border: solid red;
-    padding: 20px 30px ;
-    font-size: 18px;
-    cursor: pointer;
-}
 
-.banniere button:hover{
-    background-color: #23527c;
-}
+
+
+
 
 /*Recherche*/
-.recherche{
-    padding: 2em;
-    text-align: center;
-
-}
 
 .recherche form{
-    display: flex;
+    padding: 8px;
     justify-content: center;
     align-items: center;
 }
 
 .recherche input[type="text"] {
-    width: 60%;
-    height: 70px;
+    width: auto;
+    height: auto;
     padding: 10px;
     font-size: 18px;
     border: 1px solid #ccc;
@@ -171,7 +177,7 @@ input{
     background-color: #337ab7;
     color: #fff;
     border: none;
-    padding: 20px 30px;
+    padding: 10px 15px;
     font-size: 18px;
     cursor: pointer;
     height: none;
@@ -183,65 +189,90 @@ input{
 }
 
 /*Destinations populaire*/
-
-.destinations{
-    padding: 2em;
-
-}
-
-.destinations ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.destinations li{
-    display: inline-block;
-    margin-right: 20px;
-    font-weight: bold;
-
+.background-index{
+    background-image: url('../image/eifel.jpeg');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    animation: changeBackground 10s infinite;
+    
 
 }
 
-.destinations img{
-    width: 200px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
+@keyframes changeBackground{
+    0%{
+        background-image: url('../image/mer.jpeg');
+    }
+    33.33%{
+        background-image: url('../image/eifel.jpeg');
+    }
+
+    66.66%{
+        background-image: url('../image/abidjan-vrai.jpg');
+    }
+    100%{
+        background-image: url('../image/paix.jpeg');
+    }
 }
+
+
 
 /*Service*/
-.services{
-    padding: 2em;
+.zop{
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    text-align: center;
+    justify-content: space-between;
+    padding: 5px 25px;
 
 }
-.services ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
+
+.carte{
+    
+
+    margin: 40px;
+    margin-right: 40px;
+    background-color: #fff;
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+    box-shadow: 0 10px 4px 3px rgba(0, 0, 0, 0.1);
+
 }
 
-.services li{
-    margin-bottom: 10px;
+.carte p{
+
+    font-size: 20px;
+    font-weight: bold;
+}
+.carte:hover{
+
+}
+
+.carte img{
+    border: 0;
+    padding: 8px 8px;
+    width: 300px;
+    height: 200px;
+    border-radius: 1px;
+
+}
+
+.carte img:hover{
+    transition: all 0.3s ease;
+    transform: scale(1.05);
 
 }
 
 /*Témoignage*/
-.témoignages{
-    padding: 2em;
-
+.value{
+    padding: 10px 10px;
+    
 }
 
-.témoignages ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
 
-.témoignages li{
-    margin-bottom: 10px;
-    font-weight: bold;
-}
 /* Pied de page*/
 footer{
     background-color: #23527c;
@@ -261,16 +292,13 @@ footer a{
 
 .image {
     overflow: hidden;
-    text-align: none;
-    border: none;
-    padding: none;
 }
 
 .image img{
-    transition: transform 0.5s;
-    border: none;
+    transition: 0.5s;
     padding: 10px;
     border-radius: 10px;
+
 }
 
 .image img:hover{
@@ -278,8 +306,12 @@ footer a{
 }
 .vou{
     text-align: center;
-    color: white;
+    color: #fff;
     font-size: 38px;
+    text-decoration: underline;
+}
+.sei{
+    color: #ccc;
 }
  
 .conteiner{
@@ -398,13 +430,27 @@ h3{
     padding: 4px;
 }
 
-.element1{
-    padding: 15px;
-    width: 200px;
-    height: 200px;
-    background-color: none;
-    border-radius: 40px;
+/*LES HOTELS DES VILLES*/
+.grid{
+    background: linear-gradient(to right, #fff, #337ab7);
+    
 }
+
+.grid-temp{
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    gap: 20px;
+    margin: 15px 10px;
+}
+
+.grid-temp .partie-texte{
+    width: 500px;
+    height: 300px;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 10px 5px 1px rgba(0, 0, 0, 10);
+}
+/*LES HOTELS DES VILLES*/
 
 .aer img{
     width: 500px;
@@ -416,19 +462,11 @@ h3{
 }
 
 
-.element1 img:hover{
-    transition: 0.8s;
-    transform: scale(1.5);
-}
 
-.element1 img{
-    border-radius: 15px 10px;
-}
 
-.element1 img{
-    width: 200px;
-    height: 150px;
-}
+
+
+
 
 .culture{
     text-align: center;
@@ -518,6 +556,7 @@ input, textarea{
 .dest{
     font-size: 50px;
     padding: 50px;
+    text-align: center;
 }
 
 .mark{
@@ -541,8 +580,10 @@ input, textarea{
     text-decoration: none;
     list-style: none;
     color: #e0e0e0;
-    gap: 100px;
+    gap: 50px;
     display: flex;
+    font-size: 20px;
+    font-weight: bold;
 }
 .desti a:hover{
     color: #fff;
@@ -555,33 +596,29 @@ input, textarea{
     color: white;
 }
 
-.bacgdst{
-    background: linear-gradient(none);
+.yuop{
+    background-image: url('image/eifel.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+
+   
 }
 
 .word-wrap {
     word-wrap: break-word;
     overflow-wrap: break-word;
+    font-size: 3.5rem;
+    text-align: center;
+    color: #fff;
 }
 
 
-/*pourles ecrans de moins de 768px de large*/
-@media(max-width : 768px){
-    .container{
-        width: 100%;
-        padding: 10px;
-    }
-}
 
-/* pour les ecrans de plus de 768px de large*/
-
-@media(min-width: 768px){
-    .container{
-        width: 80%;
-        padding: 20px;
-    }
-
-}
 
 /* la page d'asie*/
 .louis{
@@ -613,16 +650,399 @@ video{
     padding: 80px 40px;
     max-width: 1000px;
     margin: 0 auto;
+    color: black;
+    background-color: #fff;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+
+}
+.charles h4{
+    font-size: 2rem;
 }
 
 .charles p{
- 
-    font-size: xx-small;
+    columns: 2;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    font-size: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     
 }
 
 h1{
     margin: 5px;
 }
+
+.jour{
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+
+.loup{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    background-color: #23527c;
+}
+.loup ul{
+    display: flex;
+    gap: 20px;
+    padding: 6px;
+    font-weight: bold;
+}
+
+.loup ul li{
+    list-style: none;
+    text-align: center;
+    font-size: 20px;
+
+}
+.loup ul li a{
+    text-decoration: none;
+    color: #f9f9f9;
+}
+.loup ul li a:hover{
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.lum{
+    color: #f9f9f9;
+}
+
+.xor{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 10px;
+
+}
+.xor:hover{
+    color: #fff;
+}
+
+.gsp{
+    padding:   20px 20px;
+    border-radius: 20px 20px;
+}
+
+.gsp:hover{
+    background-color: #337ab7;
+}
+
+.desti{
+    background-image: url('../image/desert.jpeg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+ .bouton{
+    text-decoration: none;
+    border-color: #23527c;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 15px;
+    border-left-color: red;
+    border-right-color: green;
+    padding: 2px 3px;
+    margin: 10px 10px;
+}
+
+/*la partie afrique*/
+.africa{
+    background-image: url('../image/natumaroc.jpeg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.carten{
+    background-color: #f9f9f9;
+    color: #f9f9f9;
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    justify-content: space-between;
+    text-align: center;
+
+}
+.imgin{
+
+    background-color: #f9f9f9;
+    width: auto;
+    height: auto;
+    padding: auto;
+    color: #000;
+    margin: 30px 30px;
+    border-radius: 10px 10px;
+    box-shadow: 5px 2px 3px rgba(0, 0, 0, 10);
+    
+}
+
+.imgin img{
+    width: 300px;
+    height: 300px;
+}
+
+
+main{
+    text-align: center;
+    color: #fff;
+}
+main h1{
+    color: #000;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+main button{
+    padding: 12px 10px;
+}
+
+.conteneur{
+    background: linear-gradient(to right, #f9f9f9, #0083b0);
+    color: #fff;
+    text-align: center;
+    padding: auto;
+    margin: 0;
+}
+
+
+.conteneur img{
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    padding: auto;
+    border-radius: 15px;
+}
+
+.conteneur img:hover{
+    transform: scale(1.3) rotate(360deg);
+    transition: transform 1s ease-in-out;
+    overflow: hidden;
+
+}
+
+.conteneur .element{
+    gap: 27px;
+}
+ .element2 img{
+    width: 680px;
+    height: 300px;
+}
+
+
+.element3 img{
+    width: 500px;
+    height: 300px;
+}
+
+
+.element4 img{
+    width: 400px;
+    height: 300px;
+}
+
+.element5 img{
+    width: 550px;
+    height: 300px;
+}
+
+.element6 img{
+    width: 200px;
+    height: 300px;
+}
+
+
+
+
+
+.futured{
+    background-color: white;
+    color: black;
+    padding: auto;
+    margin: 0;
+    perspective: 1000px;
+    overflow: hidden;
+    
+    
+}
+
+.futured .elemente{
+    gap: 20px;
+    padding: 20px;
+}
+
+.elemente{
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.46, 0.94);
+    transform-style: preserve-3d;
+
+}
+
+
+
+
+.elemente .partie-texte{
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 5px 5px 2px rgba(0, 0, 0, 4);
+
+}
+
+.image7 img{
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    
+
+}
+
+
+
+.image8 img{
+    width: 393px;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+
+}
+
+.image9 img{
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+}
+.image10 img{
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+
+}
+.image11 img{
+    width: 393px;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+
+}
+
+.offres-bouton{
+    padding: 10px 10px;
+    margin: 7px 7px;
+}
+.partie-texte p{
+    padding: 15px;
+    font-size: 15px;
+    font-weight: bold;
+
+}
+
+.je-suis{
+    background-image: url('../image/57773651-night-view-across-new-york-city-from-midtown-manhattan.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.tet{
+    font-size: 32px;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite alternate;
+    padding: 2px;
+    margin: 3px 3px;
+
+}
+
+
+.title{
+    font-size: 32px;
+    margin-bottom: 40px;
+    animation: pulse 2s infinite alternate;
+    text-align: center;
+}
+@keyframes pulse {
+    0%{Ctransform: scale(1); color: #ffcc00;}
+    100%{ color: #fff;}
+    
+}
+
+
+
+/*la partie Afrique*/
+
+.maroc-h1{
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and(max-width: 1037px) {
+    *{
+        position: relative;
+    }
+    
+    header{
+        padding: 10px 20px;
+    }
+
+       ul{
+        flex-direction: column;
+        position: absolute;
+        background-color: red;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(10px);
+    }
+}
+
+.grid-temp .image7 img{
+    border-color: #ffcc00 10px solid;
+
+}
+
+
+
 
 
